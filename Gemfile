@@ -16,7 +16,7 @@ gem 'rails', '~> 5.0.3'
 # Use sqlite3 as the database for Active Record
 # Note: Heroku dont support sqlite3 so lets comment it
 # gem 'sqlite3'
-gem 'pg'
+gem 'pg', '~> 0.21.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
