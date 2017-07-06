@@ -1,0 +1,24 @@
+.wrapper
+  %h1 Edit Article
+  %p#notice= alert
+  = form_for @article, url: {action: "update"}, method: "put" do |f|
+    - if @article.errors.any?
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li= msg
+    .row
+      .input-field.col.s12
+        = f.text_field :title, class: "validate"
+        %br/
+        %label{:for => "title"} Title
+    .row
+      .input-field.col.s12
+        = f.text_area :body, size: "60x12", class: "materialize-textarea", id: "body"
+        %br/
+        %label{:for => "body"} Body
+    = f.hidden_field(:id, :value=>@article.id)
+    %br
+      %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
+        Update
+        %i.large.material-icons play_circle_outline
+      = link_to "<<Back to Home", root_path

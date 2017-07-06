@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <h1>Edit Article</h1>
+  <p id="notice"><%= notice %></p>
+
+  <%= form_for @article, url: {action: "update"}, method: "put" do |f| %>
+    <% if @article.errors.any? %>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title, class: "validate" %><br />
+        <label for="title">Title</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :body, size: "60x12", class: "materialize-textarea", id: "body"  %><br />
+        <label for="body">Body</label>
+      </div>
+    </div>
+
+    <%= f.hidden_field(:id, :value=>@article.id) %><br>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Update
+      <i class="large material-icons">play_circle_outline</i>
+    </button>
+
+    <%= link_to "<<Back to Home", root_path %>  
+  <% end %>
+
+</div>

@@ -1,0 +1,31 @@
+.wrapper.sign-in
+  %h1 Sign In
+  %p#notice= notice
+  .row
+    .login.col.s6
+      = form_for "", url: {action: "dologin"}, method: "post" do |f|
+        .row
+          .input-field.col.s11
+            = f.text_field :username
+            %br
+              %label{:for => "username"} Email
+
+        .row
+          .input-field.col.s11
+            = f.password_field :password
+            %br
+              %label{:for => "password"} Password
+
+        .row
+          .input-field.col.s11
+            = f.check_box :rememberme, { class: "filled-in", id: "rememberme" }
+            %label{:for => "rememberme"} Remember Me
+
+        .row
+          .input-field.col.s11
+            %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
+              LOGIN
+              %i.large.material-icons vpn_key
+
+    .col.s6
+      = render "devise/shared/links"

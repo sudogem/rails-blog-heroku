@@ -1,0 +1,43 @@
+.wrapper.sign-in
+  %h2 Sign up
+  = form_for @userlogin, url: {action: "save"}, method: "post" do |f|
+    - if @userlogin.errors.any?
+      %ul
+        - @userlogin.errors.full_messages.each do |msg|
+          %li= msg
+
+    .row
+      .input-field.col.s5
+        .field
+          = f.label 'Full name'
+          %br/
+          = f.text_field :name
+
+    .row
+      .input-field.col.s5
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "off"
+
+    .row
+      .input-field.col.s5
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+
+    .row
+      .input-field.col.s5
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+
+    .row
+      .input-field.col.s5
+        %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
+          Sign up
