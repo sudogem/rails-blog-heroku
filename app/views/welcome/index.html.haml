@@ -5,7 +5,7 @@
       %em
         Posted #{time_ago_in_words(article.created_at)} ago
       %h5= article.title
-      %p= article.body
+      %p= h(article.body).gsub("\n", "<br>").html_safe
       %ul.cmdNav
         - if current_user
           %li= link_to 'Edit', action: "edit", controller: "article", id: article.id
