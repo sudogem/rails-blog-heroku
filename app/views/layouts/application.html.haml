@@ -15,7 +15,7 @@
             %a.brand-logo{:href => "/"} &nbsp;Rails4Blog
             - if current_user
               .profilepic
-                = image_tag current_user.image_url, alt: current_user.name, title: current_user.name
+                = image_tag (current_user.image_url.nil? ? "default_profile.png" : current_user.image_url), alt: current_user.name, title: current_user.name
             %ul#nav-mobile.right.hide-on-med-and-down
               - if current_user
                 %li= link_to 'Add Article', article_add_path
