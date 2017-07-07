@@ -1,0 +1,23 @@
+// Place all the styles related to the Auth controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign-in .row {
+  margin:0px;
+}
+
+.login {
+  border-right: 2px solid #ccc;
+}
+
+.profilepic {
+  float:right;
+  margin:0px;
+  padding:10px;
+  
+  img {
+    height: 50px;
+  }  
+}
+
+

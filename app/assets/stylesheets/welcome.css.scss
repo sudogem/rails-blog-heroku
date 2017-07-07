@@ -1,0 +1,71 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body
+{
+  background-color: #eee;
+  width: 100%;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+#content
+{
+  width: 800px;
+  margin: 0 auto; 
+  text-align: left;
+  background:#fff;
+}
+
+.maincontent { 
+  padding:20px;
+}
+
+.wrapper {
+  padding:10px;
+
+}
+
+.article
+{
+  padding: 5px 0px 5px 0px;
+  background-color: #ffffff;
+  margin: 20px 0 20px 0;
+  color: #000000;
+} 
+
+em {
+  font-size:11px;
+  float:right;
+}
+
+.cmdNav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.mid {
+  text-align: center;
+}
+
+#error_explanation {
+  border: 2px solid red;
+  padding: 1px 20px;
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  ul li {
+    color: red;
+    list-style: inside none square;
+    margin-bottom: 20px;
+  }  
+}
+
+.new_user {
+  border:1px solid red;
+}
