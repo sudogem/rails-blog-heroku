@@ -12,7 +12,7 @@
       .z-depth-2
         %nav
           .nav-wrapper
-            %a.brand-logo{:href => "/"} &nbsp;Rails4Blog
+            %a.brand-logo{:href => "/"} &nbsp;Rails5Blog
             - if current_user
               .profilepic
                 = image_tag (current_user.image_url.nil? ? "default_profile.png" : current_user.image_url), alt: current_user.name, title: current_user.name
