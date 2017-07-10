@@ -1,8 +1,9 @@
 class AuthController < ApplicationController
-  def login    
+  def login
+    redirect_to root_path if session[:user]
     respond_to do |format|
       format.html
-    end    
+    end
   end
 
   def dologin
