@@ -28,7 +28,7 @@ test:
 production:
   <<: *default
   username: <%= ENV['HEROKU_POSTGRES_DB_USERNAME'] %>
-  password: eb303cdcbfbde90ec2593da0bd91230d528d1fc48cfd4bfaf7d02a37a6aeef6b
-  database: dednbtpcih6pcr
-  host: ec2-107-21-109-15.compute-1.amazonaws.com
-  port: 5432
+  password: <%= ENV['HEROKU_POSTGRES_DB_PASSWORD'] %>
+  database: <%= ENV['HEROKU_POSTGRES_DB_DBNAME'] %>
+  host: <%= ENV['HEROKU_POSTGRES_DB_HOSTNAME'] %>
+  port: <%= ENV['HEROKU_POSTGRES_DB_PORT'] %>
