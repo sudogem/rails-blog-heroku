@@ -15,12 +15,12 @@ body
 #content
 {
   width: 800px;
-  margin: 0 auto; 
+  margin: 0 auto;
   text-align: left;
   background:#fff;
 }
 
-.maincontent { 
+.maincontent {
   padding:20px;
 }
 
@@ -35,7 +35,7 @@ body
   background-color: #ffffff;
   margin: 20px 0 20px 0;
   color: #000000;
-} 
+}
 
 em {
   font-size:11px;
@@ -44,7 +44,7 @@ em {
 
 .cmdNav li {
   display: inline;
-  margin-right: 20px;
+  margin-right: 0.2em;
 }
 
 .mid {
@@ -63,9 +63,22 @@ em {
     color: red;
     list-style: inside none square;
     margin-bottom: 20px;
-  }  
+  }
 }
 
 .new_user {
   border:1px solid red;
+}
+
+.txtcolor-white {
+  color: #fff !important;
+}
+/* Buttons */
+.btn-danger {
+  background: red !important;
+}
+
+.btn-cancel {
+  background: #eee !important;
+  color: #333 !important;
 }

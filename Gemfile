@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.3.3'
-# Heroku gems
+
+# Required gems for Heroku deployment
 gem 'rails_12factor', group: :production
 
 gem 'haml'
@@ -20,15 +21,29 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'jquery-turbolinks'
+
+# For local dev
+# gem 'haml', '~> 5.0.1'
+# gem 'devise', '~> 4.3.0'
+# gem 'linkedin'
+# gem 'omniauth'
+# gem 'omniauth-oauth2', '~> 1.3.1'
+# gem 'omniauth-facebook'
+# gem 'omniauth-github'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-linkedin-oauth2'
+# gem 'omniauth-twitter'
+# gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 
-# Note: Heroku dont support sqlite3 so lets comment it and use postgres
+# Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
 gem 'pg', '~> 0.21.0'
 
-gem 'mysql2', '~> 0.3.20'
+# gem 'mysql2', '~> 0.3.20'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -65,5 +80,28 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+platforms 'mswin', 'mingw', 'mswin64', 'x64_mingw' do
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:jruby, :ruby]
+
+
+# ================================================================================
+# Not working in travis ci,
+# ruby '2.0.0'
+
+# note: Ruby versions below is not available in ruby-buildpacks(cf-bluemix) but available on Openshift
+# More info https://github.com/cloudfoundry/ruby-buildpack/releases
+# ruby '2.1.5'
+
+# note: Not available in rbenv
+# ruby '2.1.9'
+
+# ruby '2.1.9'
+# ruby '2.3.0'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+##gem 'rails', '4.1.4' ## requiring active_job/railtie will failed.
