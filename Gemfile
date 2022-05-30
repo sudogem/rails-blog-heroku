@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.3.3'
+ruby '2.7.6'
 
 # Required gems for Heroku deployment
 gem 'rails_12factor', group: :production
@@ -22,6 +22,7 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'jquery-turbolinks'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # For local dev
 # gem 'haml', '~> 5.0.1'
@@ -37,7 +38,7 @@ gem 'jquery-turbolinks'
 # gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.3'
+gem 'rails', '~> 5.2.7'
 
 # Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
